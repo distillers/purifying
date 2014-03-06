@@ -1,0 +1,27 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="jumbotron">
+  <h1>Jocky</h1>
+  <p class="lead">
+    <img src="images/jocky.png" alt="I'm Jocky"><br>
+    Ah Nutmegged Pele.
+  </p>
+  <input type="text" ng-model="searchTerm"/>
+</div>
+
+
+<div class="list-group">
+  <div class="list-group-item" ng-repeat="usage in usages | filter: searchTerm">
+    <h4 class="list-group-item-heading">Postcode: {{usage.postcode}} House: {{usage.house}}</h4>
+    <p class="list-group-item-text">
+        hour: {{usage.hour}}
+        electricity: {{usage.electricity}}
+        gas: {{usage.gas}}
+        water: {{usage.water}}
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div>
